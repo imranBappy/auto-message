@@ -1,12 +1,13 @@
 import pyautogui
 import time
+import random
+
 pyautogui.FAILSAFE = False
 count = int(input("Enter the write number : "))
 sleep = float(input("Enter time : "))
-message = input("Please enter the message : ")
-
+messages = input("Please enter the message Hi, Hello : ").split(",")
 for i in range(0,count):
     time.sleep(sleep)
-    pyautogui.typewrite(message)
+    pyautogui.typewrite(messages[ random.randint(0, len(messages)-1)])
     time.sleep(sleep)
     pyautogui.press("enter")
